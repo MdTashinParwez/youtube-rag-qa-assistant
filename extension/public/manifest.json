@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "VideoMind AI",
+  "version": "1.0.0",
+  "description": "Ask questions and get AI-powered answers about YouTube videos.",
+    "permissions": [
+    "sidePanel",
+    "tabs"
+  ],
+
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+
+  "action": {
+    "default_title": "Open VideoMind AI"
+  },
+
+  "side_panel": {
+    "default_path": "index.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
