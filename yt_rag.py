@@ -1,3 +1,7 @@
+.\venv\Scripts\activate
+python -m uvicorn app.main:app --reload
+node .\node_modules\vite\bin\vite.js build
+
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
