@@ -715,8 +715,3 @@ The project also demonstrates how an AI backend can be connected to a real brows
 
 ---
 
-# License
-
-This project is intended for learning and experimentation.
-
-Add an appropriate open-source license before distributing the project publicly.
