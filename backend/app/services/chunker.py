@@ -1,4 +1,3 @@
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 
 
@@ -9,11 +8,6 @@ def create_chunks(transcript_data):
     current_text = []
     chunk_start = None
     chunk_end = None
-
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=200
-    )
 
     # Build timestamp-aware text blocks
     for item in transcript_data:
