@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -14,12 +15,21 @@ textarea {
   font: inherit;
 }
 
+button {
+  transition: 0.15s ease;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: #0b0b0f;
 }
+
+
+/* =========================
+   Header
+========================= */
 
 .header {
   padding: 18px;
@@ -35,10 +45,13 @@ textarea {
 .logo {
   width: 36px;
   height: 36px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 10px;
+
   background: #ffffff;
   color: #000;
 }
@@ -50,57 +63,98 @@ textarea {
 
 .brand p {
   margin: 3px 0 0;
+
   font-size: 11px;
   color: #888;
 }
 
+
+/* =========================
+   Main Content
+========================= */
+
 .content {
   flex: 1;
+
   padding: 16px;
+
   overflow-y: auto;
 }
+
+
+/* =========================
+   Video Card
+========================= */
 
 .video-card {
   display: flex;
   gap: 12px;
+
   padding: 13px;
+
   border: 1px solid #242424;
   border-radius: 12px;
+
   background: #111116;
 }
 
 .video-icon {
   width: 36px;
   height: 36px;
+
   flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 9px;
+
   background: #1d1d24;
 }
 
 .label {
   margin: 0 0 4px;
+
   font-size: 9px;
+
   color: #777;
+
   letter-spacing: 0.8px;
 }
 
 .video-card h2 {
   margin: 0;
+
   font-size: 13px;
+
+  max-width: 230px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
 }
 
 .video-card span {
   display: block;
+
   margin-top: 4px;
+
   font-size: 11px;
+
   color: #777;
 }
 
+
+/* =========================
+   Welcome
+========================= */
+
 .welcome {
   text-align: center;
+
   padding: 50px 15px 30px;
 }
 
@@ -110,70 +164,321 @@ textarea {
 
 .welcome h2 {
   margin: 15px 0 8px;
+
   font-size: 18px;
 }
 
 .welcome p {
   margin: auto;
+
   max-width: 280px;
+
   line-height: 1.5;
+
   color: #888;
+
   font-size: 12px;
 }
 
+
+/* =========================
+   Suggestions
+========================= */
+
 .suggestions {
   display: flex;
+
   flex-direction: column;
+
   gap: 8px;
 }
 
 .suggestions button {
   padding: 11px 13px;
+
   text-align: left;
+
   border: 1px solid #242424;
+
   border-radius: 9px;
+
   background: #111116;
+
   color: #ccc;
+
   cursor: pointer;
 }
 
-.suggestions button:hover {
+.suggestions button:hover:not(:disabled) {
   background: #18181e;
+
+  border-color: #333;
 }
+
+.suggestions button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   Chat
+========================= */
+
+.chat {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin-top: 20px;
+
+  padding-bottom: 10px;
+}
+
+
+/* =========================
+   Messages
+========================= */
+
+.message {
+  display: flex;
+
+  flex-direction: column;
+
+  max-width: 90%;
+}
+
+.message.user {
+  align-self: flex-end;
+
+  align-items: flex-end;
+}
+
+.message.assistant {
+  align-self: flex-start;
+
+  align-items: flex-start;
+}
+
+
+/* =========================
+   Message Content
+========================= */
+
+.message-content {
+  padding: 11px 13px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+
+  white-space: pre-wrap;
+
+  word-break: break-word;
+}
+
+
+/* User message */
+
+.message.user .message-content {
+  background: #ffffff;
+
+  color: #000000;
+
+  border-bottom-right-radius: 4px;
+}
+
+
+/* AI message */
+
+.message.assistant .message-content {
+  background: #15151b;
+
+  color: #ddd;
+
+  border: 1px solid #242424;
+
+  border-bottom-left-radius: 4px;
+}
+
+
+/* =========================
+   Sources
+========================= */
+
+.sources {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  margin-top: 7px;
+
+  padding-left: 3px;
+}
+
+.sources span {
+  margin-right: 3px;
+
+  font-size: 10px;
+
+  color: #666;
+}
+
+.sources button {
+  padding: 3px 7px;
+
+  border: 1px solid #292929;
+
+  border-radius: 6px;
+
+  background: #111116;
+
+  color: #999;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.sources button:hover {
+  background: #1c1c23;
+
+  color: #ddd;
+}
+
+
+/* =========================
+   Input Area
+========================= */
 
 .input-area {
   display: flex;
+
   gap: 8px;
+
   padding: 12px;
+
   border-top: 1px solid #222;
+
   background: #0b0b0f;
 }
 
 .input-area textarea {
   flex: 1;
+
   resize: none;
+
   padding: 10px;
+
   border: 1px solid #282828;
+
   border-radius: 10px;
+
   outline: none;
+
   background: #111116;
+
   color: white;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+.input-area textarea:focus {
+  border-color: #444;
 }
 
 .input-area textarea::placeholder {
   color: #666;
 }
 
+.input-area textarea:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   Send Button
+========================= */
+
 .send {
   width: 40px;
   height: 40px;
+
   align-self: flex-end;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 0;
+
   border-radius: 9px;
+
   background: white;
+
   color: black;
+
   cursor: pointer;
+}
+
+.send:hover:not(:disabled) {
+  background: #ddd;
+}
+
+.send:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+.message-content p {
+  margin: 0 0 10px;
+}
+
+.message-content p:last-child {
+  margin-bottom: 0;
+}
+
+.message-content strong {
+  font-weight: 700;
+}
+
+.message-content ul,
+.message-content ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.message-content li {
+  margin-bottom: 5px;
+}
+
+.message-content h1,
+.message-content h2,
+.message-content h3 {
+  margin: 12px 0 7px;
+  font-size: 15px;
+}
+
+.message-content code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.message-content blockquote {
+  margin: 8px 0;
+  padding-left: 10px;
 }

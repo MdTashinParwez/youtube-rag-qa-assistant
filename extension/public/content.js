@@ -20,6 +20,23 @@ function sendVideoId() {
   });
 }
 
+chrome.runtime.onMessage.addListener((message) => {
+
+  if (message.type === "SEEK_VIDEO") {
+
+    const video = document.querySelector("video");
+
+    if (!video) {
+      return;
+    }
+
+    video.currentTime = message.time;
+
+    video.play().catch(() => {});
+  }
+
+});
+
 sendVideoId();
 
 setInterval(sendVideoId, 2000);
