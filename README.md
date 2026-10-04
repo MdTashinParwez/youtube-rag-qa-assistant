@@ -685,33 +685,5 @@ Potential future versions can include:
 
 ---
 
-# What I Learned From This Project
 
-Building VideoMind AI helped explore the complete lifecycle of a practical RAG application:
-
-```text
-Raw Data
-   ↓
-Data Processing
-   ↓
-Chunking
-   ↓
-Embeddings
-   ↓
-Vector Database
-   ↓
-Retrieval
-   ↓
-Prompt Construction
-   ↓
-LLM Generation
-   ↓
-Grounded Response
-   ↓
-User Interface
-```
-
-The project also demonstrates how an AI backend can be connected to a real browser-based product instead of being used only through a standalone API or notebook.
-
----
 
